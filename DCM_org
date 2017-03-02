@@ -1,0 +1,1 @@
+# Takes in list of files and organizes based on patientid, study and sequence information, if its a dicom
