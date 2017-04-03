@@ -14,28 +14,22 @@ for p, d, f in os.walk(fld):
             PId = PId.replace('WHICAP_', '')
             seq = dcm_info.SeriesDescription
             seq = seq.replace(' ', '') # remove spaces
-                seq = seq.replace('/', '') # remove /
-                # Seq to Std format
-                if 'MPRAGE' in seq:
-                    seq = '3DT1'
-                if '3D' in seq and 'FLAIR' in seq:
-                    seq = 'FLAIR'
-                if 'DTI' in seq:
-                    seq = 'DTI'
+            seq = seq.replace('/', '') # remove /
+            # Seq to Std format
+            if 'MPRAGE' in seq:
+                seq = '3DT1'
+            if '3D' in seq and 'FLAIR' in seq:
+                seq = 'FLAIR'
+            if 'DTI' in seq:
+                seq = 'DTI'
 
-            if not os.path.isdir(os.path.join(p, PId))
+            if not os.path.isdir(os.path.join(p, PId)):
                 os.makedirs(os.path.join(p, PId))
-            if not os.path.isdir(os.path.join(p, PId, 'DICOM', seq))
+            if not os.path.isdir(os.path.join(p, PId, 'DICOM', seq)):
                 os.makedirs(os.path.join(p, PId, seq))
                 os.makedirs(os.path.join(p, PId, 'DICOM', seq))
-                os.rename(os.path.join(p, name), os.path.join(p, PId, 'DICOM', seq)
+                os.rename(os.path.join(p, name), os.path.join(p, PId, 'DICOM', seq))
 
         except:
             print ('This is not a DICOM: ' + os.path.join(p, name))
-
-
-
-
-
-
 
