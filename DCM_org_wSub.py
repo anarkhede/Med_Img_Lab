@@ -28,7 +28,7 @@ for p, d, f in os.walk(fld):
             if not os.path.isdir(os.path.join(fld, PId, 'DICOM', seq)):
                 os.makedirs(os.path.join(fld, PId, seq))
                 os.makedirs(os.path.join(fld, PId, 'DICOM', seq))
-                os.rename(os.path.join(p, name), os.path.join(fld, PId, 'DICOM', seq, name))
+            os.rename(os.path.join(p, name), os.path.join(fld, PId, 'DICOM', seq, name))
 
         except:
             print ('This is not a DICOM: ' + os.path.join(p, name))
