@@ -1,8 +1,7 @@
 # Takes in Study folder location and organizes files based on patientid, study and sequence information, if its a dicom.
 # Using package pydicom called as dicom
 
-import os, sys, dicom
-import numpy as np
+import os, dicom
 
 fld = raw_input("Please enter Study Folder path: ")
 
